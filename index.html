@@ -1,0 +1,237 @@
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla web Responsiva</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+            transform: scale(1.1);
+        }
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .navbar .icon {
+            display: none;
+        }
+        .content {
+            padding: 60px 20px;
+            margin-bottom: 100px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            width: calc(100% - 40px);
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: scale(1.02);
+        }
+        .rounded-image {
+            border-radius: 50%;
+        }
+        .rounded-image-info {
+            border-radius: 15%;
+        }
+        .rounded-image-galery {
+            border-radius: 20%;
+        }
+
+        .rounded-image-galery-2 {
+            border-radius: 10%;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                display: none;
+            }
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
+            .navbar select {
+                display: block;
+                background-color: #333;
+                color: white;
+                border: none;
+                padding: 14px 20px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            #mapa iframe {
+                width: 100%;
+                height: 300px;
+            }
+        }
+        @media screen and (min-width: 601px) {
+            .navbar select {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar" id="myNavbar">
+    <a href="#inicio" class="active">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#sobreNosotros">Sobre Nosotros</a>
+    <a href="#contactos">Contactos</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#mapa">Mapa</a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">☰</a>
+    <select id="dropdownMenu" onchange="navigateTo(this)" style="display: none;">
+        <option value="#inicio">Inicio</option>
+        <option value="#servicios">Servicios</option>
+        <option value="#sobreNosotros">Sobre Nosotros</option>
+        <option value="#contactos">Contactos</option>
+        <option value="#galeria">Galeria</option>
+        <option value="#mapa">Mapa</option>
+    </select>
+</div>
+
+<div id="inicio" class="content">
+    <h1>Dulcería Piloto</h1>
+    <p>Dulces, postres, helados, bebidas y más.</p>
+
+    <div class="section">
+        <div class="image-container">
+            <img src="cremaDeLeche.jpeg" class="rounded-image">
+            <img src="lecheConCoco.jpeg" class="rounded-image">
+            <img src="lecheConPina.jpeg" class="rounded-image">
+        </div>
+    </div>
+
+    <div id="servicios" class="section">
+        <h2>Información</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div id="sobreNosotros" class="section">
+        <div class="image-container">
+            <img src="info.jpeg" class="rounded-image-info" width="500">
+        </div>
+    </div>
+
+    <div id="contactos" class="section">
+        <h2>Contacto</h2>
+        <p>Tel: 809-543-3608</p>
+        <p>WhatsApp: 829-659-8217</p>
+    </div>
+
+    <div id="galeria" class="section">
+        <h2>Galería</h2>
+        <div class="image-container">
+            <img src="galeria-1.jpeg" class="rounded-image-galery">
+            <img src="galeria-2.jpg" class="rounded-image-galery">
+            <img src="galeria-3.jpeg" class="rounded-image-galery" width="350">
+        </div>
+    </div>
+
+    <div class="section">
+      <div class="image-container">
+          <img src="galeria-4.jpeg" class="rounded-image-galery-2" width="250">
+          <img src="galeria-5.jpeg" class="rounded-image-galery-2" width="250">
+          <img src="galeria-6.jpeg" class="rounded-image-galery-2" width="250">
+      </div>
+    </div>
+
+    <div id="mapa" class="section">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3758.6190134380117!2d-71.20903742500857!3d19.60081638171488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb109f7a7ddce93%3A0x6143e435d336552!2sPILOTO!5e0!3m2!1ses-419!2sdo!4v1720042370206!5m2!1ses-419!2sdo" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Síguenos:</p>
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
+</div>
+
+<script>
+function toggleNavbar() {
+    var x = document.getElementById("dropdownMenu");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
+function navigateTo(select) {
+    var section = document.querySelector(select.value);
+    section.scrollIntoView({ behavior: 'smooth' });
+}
+
+document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+
+
+</body></html>
