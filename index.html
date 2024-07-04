@@ -133,23 +133,35 @@
 </head>
 <body>
 
-<div class="navbar" id="myNavbar">
-    <a href="#inicio" class="active">Inicio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#sobreNosotros">Sobre Nosotros</a>
-    <a href="#contactos">Contactos</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#mapa">Mapa</a>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">☰</a>
-    <select id="dropdownMenu" onchange="navigateTo(this)" style="display: none;">
-        <option value="#inicio">Inicio</option>
-        <option value="#servicios">Servicios</option>
-        <option value="#sobreNosotros">Sobre Nosotros</option>
-        <option value="#contactos">Contactos</option>
-        <option value="#galeria">Galeria</option>
-        <option value="#mapa">Mapa</option>
-    </select>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Dulceria Piloto</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobreNosotros">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Más
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#contactos">Contacto</a>
+                        <a class="dropdown-item" href="#galeria">Galeria</a>
+                        <a class="dropdown-item" href="#mapa">Mapa</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 <div id="inicio" class="content">
     <h1>Dulcería Piloto</h1>
