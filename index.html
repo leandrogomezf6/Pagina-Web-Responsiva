@@ -1,8 +1,6 @@
 <html lang="es"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
     <title>Plantilla web Responsiva</title>
     <style>
         body {
@@ -42,6 +40,23 @@
         .content {
             padding: 60px 20px;
             margin-bottom: 100px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
         }
         .section {
             width: calc(100% - 40px);
@@ -186,12 +201,12 @@
     </div>
 </div>
 
- <!-- Footer -->
-    <footer class="bg-light text-center text-lg-start mt-5">
-        <div class="container p-4">
-            <p class="text-center">&copy; 2024 Dulceria Piloto. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+<div class="footer">
+    <p>Síguenos:</p>
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
+</div>
 
 <script>
 function toggleNavbar() {
@@ -218,9 +233,5 @@ document.querySelectorAll('.navbar a').forEach(anchor => {
 });
 </script>
 
-    <!-- Scripts de Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+</body></html>
